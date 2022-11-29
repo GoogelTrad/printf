@@ -22,8 +22,14 @@ static int what_pourcent(char c, va_list ap)
 		return (ft_str(va_arg(ap, char *)));
 	else if (c == '%')
 		return (ft_putchar('%'));
-	//else if (c == 'p')
-	//	return (ft_void(va_arg(ap, char *)));
+	else if (c == 'p')
+		return (ft_void(va_arg(ap, char *)));
+	else if (c == 'X')
+		return (ft_hex_upper(va_arg(ap, int), 1));
+	else if (c == 'x')
+		return (ft_hex_upper(va_arg(ap, int), 0));
+	else if (c == 'u')
+		return (ft_unsigned(va_arg(ap, unsigned int)));
 	return (42);
 }
 
@@ -60,5 +66,7 @@ int ft_printf(const char *list_arg, ...)
 int main(void)
 {
 	void *test;
-	ft_printf("Bonjour je suis %p", &test);
+	//printf("%p\n", &test);
+	ft_printf("Bonjour je suis %u", -45);
+	
 }

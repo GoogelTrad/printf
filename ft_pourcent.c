@@ -29,5 +29,10 @@ int ft_str(char *str)
 
 int ft_void(void *pt_void)
 {
-    //return(ft_putvoid(pt_void));
+    //return();
+}
+
+int ft_hex_upper(int n, int caps)
+{
+    return (ft_conv_hex(n, caps));
 }
