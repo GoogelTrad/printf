@@ -26,3 +26,8 @@ int ft_str(char *str)
 {
     return(ft_putstr(str));
 }
+
+int ft_void(void *pt_void)
+{
+    //return(ft_putvoid(pt_void));
+}

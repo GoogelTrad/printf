@@ -4,6 +4,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdint.h>
 # include <stdarg.h>
 
 
@@ -16,6 +17,8 @@ int     ft_putchar(char c);
 int     ft_int(int entier);
 int     ft_char(char c);
 int     ft_str(char *c);
+void	ft_putnbr(int n);
+int		ft_putvoid(void *pt_void);
 
 
 #endif

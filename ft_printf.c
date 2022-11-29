@@ -14,14 +14,16 @@
 
 static int what_pourcent(char c, va_list ap)
 {
-	write(1, "1", 1);
 	if (c == 'd')
 		return (ft_int(va_arg(ap, int)));
 	else if (c == 'c')
 		return (ft_char(va_arg(ap, int)));
 	else if (c == 's')
 		return (ft_str(va_arg(ap, char *)));
-	
+	else if (c == '%')
+		return (ft_putchar('%'));
+	//else if (c == 'p')
+	//	return (ft_void(va_arg(ap, char *)));
 	return (42);
 }
 
@@ -41,12 +43,7 @@ int ft_printf(const char *list_arg, ...)
 		if (list_arg[i] == '%')
 		{
 			i++;	
-		if (list_arg[i] == 'd')
-			nb_char +=  (ft_int(va_arg(ap, int)));
-		else if (list_arg[i] == 'c')
-			nb_char +=  (ft_char(va_arg(ap, int)));
-		else if (list_arg[i] == 's')
-			nb_char += (ft_str(va_arg(ap, char *)));
+			nb_char += what_pourcent(list_arg[i], ap);
 		}
 		else
 		{
@@ -62,5 +59,6 @@ int ft_printf(const char *list_arg, ...)
 
 int main(void)
 {
-	ft_printf("Bonjour je suis %c%s", 'C', "elian");
+	void *test;
+	ft_printf("Bonjour je suis %p", &test);
 }
