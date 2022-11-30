@@ -44,7 +44,7 @@ int	ft_conv_hex(int n, int caps)
 		n /= ft_strlen(base);
 		j++;
 	}
-	str[j++] = n + '0';
+	str[j] = n + '0';
 	nb_char += ft_putstr_rev(str, caps);
 	return (nb_char);
 }

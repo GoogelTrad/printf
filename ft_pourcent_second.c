@@ -7,5 +7,5 @@ int	ft_hex_lower(int n, int caps)
 
 int	ft_unsigned(unsigned int n)
 {
-	return (ft_putnbr_unsigned(unsigned int n));
+	return (ft_putnbr_unsigned(n));
 }

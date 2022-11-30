@@ -35,6 +35,6 @@ int	ft_deci_u(int n)
 {
 	if (n < 0)
 		n *= -1;
-	ft_printf("%d", n);
+	//ft_printf("%d", n);
 	return (n);
 }

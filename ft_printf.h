@@ -25,7 +25,7 @@ int		ft_hex_upper(int n, int caps);
 void	ft_tolower(char *str);
 int		ft_hex_lower(int n, int caps);
 int		ft_deci_u(int n);
-int		ft_unsigned(int n);
+int		ft_unsigned(unsigned int n);
 int		ft_void(void *pt_void);
 int		ft_putnbr_unsigned(unsigned int n);
 
