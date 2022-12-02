@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_hex.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cmichez <cmichez@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/02 13:45:25 by cmichez           #+#    #+#             */
+/*   Updated: 2022/12/02 13:45:25 by cmichez          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 //Faire une conversion d'un nombre en hexa
 
-static int	count_size(int n)
+int	count_size(int n)
 {
 	int	i;
 
@@ -20,8 +32,7 @@ static int	count_size(int n)
 	return (i + 1);
 }
 
-
-int	ft_conv_hex(int n, int caps)
+int	ft_conv_hex(long n, int caps)
 {
 	int		j;
 	int		nb_char;
@@ -29,7 +40,7 @@ int	ft_conv_hex(int n, int caps)
 	char	*str;
 
 	j = 0;
-	str = malloc(sizeof(char) * count_size(n) + 1);
+	str = malloc(sizeof(char) * (count_size(n) + 1));
 	base = "0123456789ABCDEF";
 	nb_char = 0;
 	if (n < 0)
@@ -45,6 +56,7 @@ int	ft_conv_hex(int n, int caps)
 		j++;
 	}
 	str[j] = n + '0';
+	str[j + 1] = '\0';
 	nb_char += ft_putstr_rev(str, caps);
 	return (nb_char);
 }

@@ -1,49 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_aux_second.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmichez <cmichez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/02 13:43:57 by cmichez           #+#    #+#             */
-/*   Updated: 2022/12/02 13:43:57 by cmichez          ###   ########.fr       */
+/*   Created: 2022/12/02 13:44:07 by cmichez           #+#    #+#             */
+/*   Updated: 2022/12/02 13:44:07 by cmichez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr(int n)
+int	ft_putstr_rev(char *str, int caps)
 {
-	if (n == -2147483648)
-		ft_putstr("-2147483648");
-	else
+	int	i;
+	int	j;
+
+	i = ft_strlen(str);
+	j = i;
+	if (!caps)
 	{
-		if (n < 0)
-		{
-			ft_putchar('-');
-			n *= -1;
-		}
-		if (n >= 10)
-		{
-			ft_putnbr(n / 10);
-			ft_putnbr(n % 10);
-		}
-		else
-			ft_putchar(n + '0');
+		ft_tolower(str);
 	}
+	while (--i > -1)
+		write(1, &str[i], 1);
+	return (j);
 }
 
-int	ft_putnbr_unsigned(unsigned int n)
+void	ft_tolower(char *str)
 {
 	int	i;
 
 	i = 0;
-	if (n >= 10)
+	while (str[i])
 	{
-		i += ft_putnbr_unsigned(n / 10);
-		i += ft_putnbr_unsigned(n % 10);
+		if (str[i] >= 65 && str[i] <= 90)
+		{
+			str[i] += 32;
+		}
+		i++;
 	}
-	else
-		i += ft_putchar(n + '0');
-	return (i);
+}
+
+int	ft_print_adresse(void *ptr)
+{
+	write(1 , "0x", 2);
+	return (ft_hex_lower((long) ptr, 0) + 2);
 }
