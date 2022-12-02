@@ -46,5 +46,5 @@ void	ft_tolower(char *str)
 int	ft_print_adresse(void *ptr)
 {
 	write(1 , "0x", 2);
-	return (ft_hex_lower((long) ptr, 0) + 2);
+	return (ft_conv_hex((long) ptr, 0) + 2);
 }

@@ -6,7 +6,7 @@
 /*   By: cmichez <cmichez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 18:29:52 by cmichez           #+#    #+#             */
-/*   Updated: 2022/12/02 16:42:14 by cmichez          ###   ########.fr       */
+/*   Updated: 2022/12/02 17:13:11 by cmichez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	what_pourcent(char c, va_list ap)
 	if (c == 'd')
 		return (ft_putstr(ft_itoa(va_arg(ap, int))));
 	else if (c == 'c')
-		return (ft_putchar(va_arg(ap, char)));
+		return (ft_putchar(va_arg(ap, int)));
 	else if (c == 's')
 		return (ft_putstr(va_arg(ap, char *)));
 	else if (c == '%')
@@ -68,7 +68,7 @@ int	main(void)
 {
 	int	test = 85415918;
 
-	ft_printf("%p\n", &test);
-	printf("%p\n", &test);
+	ft_printf("%p\n", NULL);
+	printf("%p\n", NULL);
 	return (1);
 }

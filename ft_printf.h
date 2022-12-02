@@ -6,7 +6,7 @@
 /*   By: cmichez <cmichez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 13:53:26 by cmichez           #+#    #+#             */
-/*   Updated: 2022/12/02 16:16:01 by cmichez          ###   ########.fr       */
+/*   Updated: 2022/12/02 17:13:28 by cmichez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int		ft_putstr_rev(char *str, int caps);
 int		ft_conv_hex(long n, int caps);
 int		ft_hex_upper(long n, int caps);
 void	ft_tolower(char *str);
-int		ft_hex_lower(long n, int caps);
 int		ft_unsigned(unsigned int n);
 int		ft_void(void *pt_void);
 int		ft_putnbr_unsigned(unsigned int n);
