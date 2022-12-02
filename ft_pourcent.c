@@ -6,7 +6,7 @@
 /*   By: cmichez <cmichez@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 18:28:52 by cmichez           #+#    #+#             */
-/*   Updated: 2022/11/28 20:01:29 by cmichez          ###   ########.fr       */
+/*   Updated: 2022/11/30 15:27:52 by cmichez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int ft_str(char *str)
 
 int ft_void(void *pt_void)
 {
-    //return();
+    return(0);
 }
 
 int ft_hex_upper(int n, int caps)

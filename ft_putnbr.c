@@ -28,11 +28,10 @@ int	ft_putnbr_unsigned(unsigned int n)
 	i = 0;
 	if (n >= 10)
 	{
-		ft_putnbr_unsigned(n / 10);
-		ft_putnbr_unsigned(n % 10);
+		i += ft_putnbr_unsigned(n / 10);
+		i += ft_putnbr_unsigned(n % 10);
 	}
 	else
-		ft_putchar(n + '0');
-	i++;
+		i += ft_putchar(n + '0');
 	return(i);
 }

@@ -6,13 +6,15 @@
 /*   By: cmichez <cmichez@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 18:29:52 by cmichez           #+#    #+#             */
-/*   Updated: 2022/11/28 20:09:47 by cmichez          ###   ########.fr       */
+/*   Updated: 2022/11/30 15:39:53 by cmichez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int what_pourcent(char c, va_list ap)
+static va_list ap;
+
+static int what_pourcent(char c)
 {
 	if (c == 'd')
 		return (ft_int(va_arg(ap, int)));
@@ -37,7 +39,7 @@ static int what_pourcent(char c, va_list ap)
 
 int ft_printf(const char *list_arg, ...)
 {
-	va_list ap;
+	//va_list ap;
 	int     len_arg;
 	int     i;
 	int     nb_char;
@@ -51,7 +53,7 @@ int ft_printf(const char *list_arg, ...)
 		if (list_arg[i] == '%')
 		{
 			i++;	
-			nb_char += what_pourcent(list_arg[i], ap);
+			nb_char += what_pourcent(list_arg[i]);
 		}
 		else
 		{
@@ -68,6 +70,6 @@ int ft_printf(const char *list_arg, ...)
 int main(void)
 {
 	void *test;
-	//printf("%u\n", -45);
-	ft_printf("Bonjour je suis %i", 654664);
+	printf(" %d\n", ft_printf("Bonjour je suis %u", 4643768563872));
+	//ft_printf("Bonjour je suis %s %d %c %i %u %x %X", "Celian", 654664, 'c', 42, 43, 42, 42);
 }
