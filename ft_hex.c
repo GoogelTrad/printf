@@ -12,51 +12,37 @@
 
 #include "ft_printf.h"
 
-//Faire une conversion d'un nombre en hexa
-
-int	count_size(int n)
+int	ft_put_hex(long n, char *base)
 {
-	int	i;
+	int i;
 
 	i = 0;
-	if (n < 0)
-	{
-		n *= -1;
-		i++;
-	}
-	while (n / 10)
-	{
-		i++;
-		n /= 10;
-	}
-	return (i + 1);
+	ft_conv_hex(n, base, &i);
+	return (i);
 }
 
-int	ft_conv_hex(long n, int caps)
+void ft_conv_hex(long n, char *base, int *i)
 {
-	int		j;
-	int		nb_char;
-	char	*base;
-	char	*str;
+	if (n >= 16)
+		ft_conv_hex(n / 16, base, i);
+	ft_putchar(base[n % 16]);
+	(*i)++;
+}
 
-	j = 0;
-	str = malloc(sizeof(char) * (count_size(n) + 1));
-	base = "0123456789ABCDEF";
-	nb_char = 0;
-	if (n < 0)
-	{
-		write(1, "-", 1);
-		n *= -1;
-		nb_char++;
-	}
-	while (n / ft_strlen(base))
-	{
-		str[j] = base[n % ft_strlen(base)];
-		n /= ft_strlen(base);
-		j++;
-	}
-	str[j] = n + '0';
-	str[j + 1] = '\0';
-	nb_char += ft_putstr_rev(str, caps);
-	return (nb_char);
+void ft_ptr_hex(unsigned long nb, char *base, int *len)
+{
+	if (nb >= 16)
+		ft_ptr_hex(nb / 16, base, len);
+	ft_putchar(base[nb % 16]);
+	(*len)++;
+}
+
+int ft_print_ptr(unsigned long ptr)
+{
+	int len;
+
+	len = 0;
+	len += ft_putstr("0x");
+	ft_ptr_hex(ptr, "0123456789abcdef", &len);
+	return (len);
 }
