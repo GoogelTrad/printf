@@ -6,7 +6,7 @@
 /*   By: cmichez <cmichez@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 13:53:26 by cmichez           #+#    #+#             */
-/*   Updated: 2022/12/09 13:49:28 by cmichez          ###   ########.fr       */
+/*   Updated: 2022/12/12 16:08:22 by cmichez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,17 @@
 
 int		ft_printf(const char *list_arg, ...);
 int		ft_strlen(char *str);
-int		ft_atoi(const char *nptr);
-char	*ft_itoa(int n);
 int		ft_putstr(char *str);
 int		ft_putchar(char c);
-int 	ft_putnbr(int n);
+int		ft_putnbr(int n);
 int		ft_putstr_rev(char *str, int caps);
-void    ft_conv_hex(long n, char *base, int *i);
+void	ft_conv_hex(unsigned int n, char *base, int *i);
 int		ft_hex_upper(long n, int caps);
 void	ft_tolower(char *str);
 int		ft_unsigned(unsigned int n);
 int		ft_putnbr_unsigned(unsigned int n);
-int     ft_print_ptr(unsigned long ptr);
-void    ft_ptr_hex(unsigned long nb, char *base, int *len);
-int	    ft_put_hex(long n, char *base);
-
+int		ft_print_ptr(unsigned long ptr);
+void	ft_ptr_hex(unsigned long nb, char *base, int *len);
+int		ft_put_hex(int n, char *base);
 
 #endif

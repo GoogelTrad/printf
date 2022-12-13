@@ -6,7 +6,7 @@
 /*   By: cmichez <cmichez@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 18:28:29 by cmichez           #+#    #+#             */
-/*   Updated: 2022/12/06 16:17:31 by cmichez          ###   ########.fr       */
+/*   Updated: 2022/12/12 17:58:49 by cmichez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_putstr(char *str)
 	if (!str)
 	{
 		write(1, "(null)", 6);
-		return(6);
+		return (6);
 	}
 	while (str[i])
 	{

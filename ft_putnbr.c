@@ -35,10 +35,9 @@ int	ft_putnbr(int n)
 			i += ft_putnbr(n % 10);
 		}
 		else
-			i+= ft_putchar(n + '0');
+			i += ft_putchar(n + '0');
 	}
 	return (i);
-
 }
 
 int	ft_putnbr_unsigned(unsigned int n)
